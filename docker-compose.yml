@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile/go-dev.Dockerfile
+    container_name: server
+    volumes:
+      - './server:/app'
+    working_dir: /app
+    ports:
+      - 9000:9000
+    command: go run main.go
